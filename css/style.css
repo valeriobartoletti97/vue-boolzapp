@@ -57,13 +57,11 @@ img{
 }
 .icons-group{
     color: var(--color-light-icons);
-    font-size: 1.3em;
 }
 .notify-icon{
     color:var(--color-notification);
     background-color: var(--color-white);
     border-radius: 50%;
-    font-size: 20px;
     padding: 15px 12px;
 }
 .s-underline{
@@ -74,7 +72,12 @@ img{
 .recive-notify{
     font-weight: 500;
 }
-
+i{
+    font-size: 1.3em;
+}
+#msg-bar > i{
+    color:var(--color-dark-grey)
+}
 /* utility */
 
 .h0{
