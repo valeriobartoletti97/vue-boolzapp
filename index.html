@@ -67,7 +67,18 @@
                 <div class="col-12 col-md-8">
                     <div class="row h-100 flex-column flex-nowrap g-0">
                         <div class="col-12 headers">Right Header</div>
-                        <div id="main-chat" class="col-12 flex-grow-1 overflow-y-auto">Main</div>
+                        <!-- main chat -->
+                        <div id="chat-wrapper" class="col-12 flex-grow-1 overflow-y-auto">
+                            <div id="main-chat" class="pt-5 d-flex flex-column">
+                                <div class="msg sent p-3">
+                                    Ciao come stai?
+                                </div>
+                                <div class="msg received p-3">
+                                    Ciao come stai?
+                                </div>
+                            </div>
+                        </div>
+                        <!-- msg-bar -->
                         <div id="msg-bar" class="col-12 d-flex flex-nowrap align-items-center">
                             <i class="fa-regular fa-face-smile p-4"></i>
                             <input type="text" class="form-control" placeholder="Scrivi un messaggio">

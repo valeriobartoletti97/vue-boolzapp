@@ -37,7 +37,7 @@
 #notifications{
     background-color: var(--color-notification);
 }
-#main-chat{
+#chat-wrapper{
     background-image: url(../img/mine.jpg);
     background-size: contain;
 }
@@ -81,11 +81,27 @@ i{
 .contact-name{
     font-size: 1.3em;
 }
-.recive-notify, .contact-name, .my-name{
+.recive-notify, .contact-name, .my-name , .msg{
     font-weight: 500;
+}
+#main-chat{
+    width: 80%;
+    margin:0 auto;
+}
+.msg{
+    width: 40%;
+    border-radius: 12px;
 }
 /* utility */
 
 .h0{
     height: 0;
+}
+.sent{
+    background-color: var(--color-sent-message);
+    align-self: flex-end;
+    margin-bottom: 10px;
+}
+.received{
+    background-color: var(--color-white);
 }
