@@ -10,7 +10,27 @@
 </head>
 <body>
     <div id="app" class="vh-100">
-
+        <div class="container py-4 h-100">
+            <div class="row h-100 flex-nowrap g-0">
+                <!-- left container -->
+                <div id="left-contacts" class="col-12 col-md-4">
+                    <div class="row h-100 flex-column flex-nowrap g-0">
+                        <div class="col-12 headers">Header</div>
+                        <div class="col-12">Notifiche</div>
+                        <div class="col-12">Searchbar</div>
+                        <div class="col-12 flex-grow-1 overflow-y-auto h0">Contacts</div>
+                    </div>
+                </div>
+                <!-- right container -->
+                <div class="col-12 col-md-8">
+                    <div class="row h-100 flex-column flex-nowrap g-0">
+                        <div class="col-12 headers">Right Header</div>
+                        <div id="main-chat" class="col-12 flex-grow-1 overflow-y-auto">Main</div>
+                        <div id="msg-bar" class="col-12">Message-bar</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>

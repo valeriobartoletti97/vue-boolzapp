@@ -1,0 +1,46 @@
+/* GENERAL */
+
+:root {
+    --color-white: #ffffff;
+    --color-dark-text: #161012;
+    --color-dark-grey: #6b7376;
+    --color-text-grey: #b6bbc1;
+    --color-headers: #eaeaea;
+    --color-contact-active: #e9ebeb;
+    --color-light-icons: #b1b1b1;
+    --color-sent-message: #d5f9ba;
+    --color-notification: #8edafc;
+    --color-msg-bar: #f3eeea;
+    --background: linear-gradient(180deg, #009688 24.99%, #DCDBD3 25%);
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* APP */
+
+#app{
+    background: var(--background);
+}
+#left-contacts{
+    background-color: var(--color-white);
+}
+.headers{
+    background-color: var(--color-headers);
+}
+#main-chat{
+    background-image: url(../img/mine.jpg);
+    background-size: contain;
+}
+#msg-bar{
+    height:70px;
+    background-color: var(--color-msg-bar);
+}
+
+/* utility */
+
+.h0{
+    height: 0;
+}
