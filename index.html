@@ -22,7 +22,7 @@
                             <div class="col-12 p-2 px-3 d-flex justify-content-between">
                                 <div>
                                     <img src="img/avatar_io.jpg" alt="me">
-                                    <span class="contact-name">Sofia</span>
+                                    <span class="my-name">Sofia</span>
                                 </div>
                                 <div class="icons-group d-flex flex-nowrap align-items-center">
                                     <i class="fa-solid fa-circle-notch px-2"></i>
@@ -50,7 +50,17 @@
                                 <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" >
                             </div>
                         </div>
-                        <div class="col-12 flex-grow-1 overflow-y-auto h0 p-2 px-3">Contacts</div>
+                        <div class="col-12 flex-grow-1 overflow-y-auto h0 p-2 px-3">
+                            <div class="d-flex flex-nowrap py-2" v-for="(el,i) in contacts" :key="el.id">
+                                <div>
+                                    <img class="" :src="el.avatar" :alt="el.name">
+                                </div>
+                                <div class="d-inline align-top ps-4">
+                                    <span class="d-inline-block contact-name">{{el.name}}</span><br>
+                                    <span class="last-message">Ultimo messaggio inviato</span>
+                                </div>
+                            </div>    
+                        </div>
                     </div>
                 </div>
                 <!-- right container -->

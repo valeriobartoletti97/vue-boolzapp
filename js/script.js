@@ -11,6 +11,6 @@ createApp({
 
     },
     mounted(){
-        console.log(this.contacts)
+        console.log(this.contacts[0].avatar)
     }
 }).mount('#app')

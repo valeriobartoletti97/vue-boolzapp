@@ -50,8 +50,7 @@ img{
     border-radius: 50%;
     overflow:hidden;
 }
-.contact-name{
-    font-weight: 500;
+.my-name{
     margin-left: 5px;
     font-size: 1.2em;
 }
@@ -69,14 +68,21 @@ img{
     color:var(--color-dark-grey);
     font-size: 0.8em;
 }
-.recive-notify{
-    font-weight: 500;
-}
 i{
     font-size: 1.3em;
 }
 #msg-bar > i{
     color:var(--color-dark-grey)
+}
+.last-message{
+    color: var(--color-text-grey);
+    font-size: 0.8em;
+}
+.contact-name{
+    font-size: 1.3em;
+}
+.recive-notify, .contact-name, .my-name{
+    font-weight: 500;
 }
 /* utility */
 
