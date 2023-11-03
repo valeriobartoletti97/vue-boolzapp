@@ -16,7 +16,7 @@
         <div class="container py-4 h-100">
             <div class="row h-100 flex-nowrap g-0">
                 <!-- left container -->
-                <div id="left-contacts" class="col-12 col-md-4">
+                <div id="left-contacts" class="col-12 col-md-4 br-visible">
                     <div class="row h-100 flex-column flex-nowrap g-0">
                         <div class="headers">
                             <div class="col-12 p-2 px-3 d-flex justify-content-between">
@@ -74,7 +74,7 @@
                                     <div class="d-inline-block">
                                         <img :src="contacts[activeContact].avatar" :alt="contacts[activeContact].name">
                                     </div>
-                                    <div class="d-inline-block align-bottom">
+                                    <div class="d-inline-block align-bottom px-2">
                                         <span class="contact-name">{{contacts[activeContact].name}}</span><br>
                                         <span class="last-access">Ultimo accesso oggi alle 12:00</span>
                                     </div>
@@ -87,7 +87,7 @@
                             </div>
                         </div>
                         <!-- main chat -->
-                        <div id="chat-wrapper" class="col-12 flex-grow-1 overflow-y-auto">
+                        <div id="chat-wrapper" class="col-12 flex-grow-1 h0 overflow-y-auto">
                             <div id="main-chat" class="pt-5 d-flex flex-column">
                                 <div class="msg p-3" v-for="(msg,i) in contacts[activeContact].messages" :class="msg.status">
                                     {{msg.message}}
@@ -97,7 +97,7 @@
                         <!-- msg-bar -->
                         <div id="msg-bar" class="col-12 d-flex flex-nowrap align-items-center">
                             <i class="fa-regular fa-face-smile p-4"></i>
-                            <input type="text" class="form-control" placeholder="Scrivi un messaggio" v-model="message">
+                            <input type="text" class="form-control" placeholder="Scrivi un messaggio" v-model="message" @keyup.enter="sendMessage">
                             <i class="fa-solid fa-microphone p-4"></i>
                         </div>
                     </div>

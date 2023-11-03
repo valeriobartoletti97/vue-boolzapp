@@ -15,6 +15,27 @@ createApp({
             if(index !== -1){
                 this.activeContact = index
             }
+        },
+        sendMessage(){
+            if(this.message === ''){
+                this.message = ''
+            } else {
+                const newMessage = {
+                date: new Date,
+                message: this.message,
+                status: 'sent'
+            };
+            this.contacts[this.activeContact].messages.push(newMessage);
+            this.message = ''
+            setTimeout(()=>{
+                const newAnswer = {
+                    date: new Date,
+                    message: 'Ok',
+                    status: 'received'
+                };
+                this.contacts[this.activeContact].messages.push(newAnswer);
+            }, "1000");
+            }
         }
     },
     mounted(){

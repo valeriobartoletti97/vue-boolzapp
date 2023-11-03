@@ -113,3 +113,6 @@ i{
 .received{
     background-color: var(--color-white);
 }
+.br-visible{
+    border-right: 1px solid var(--color-light-icons);
+}
