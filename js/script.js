@@ -11,7 +11,10 @@ createApp({
     },
     methods:{
         selectContact(id){
-            this.activeContact = this.contacts.findIndex((contact)=> contact.id === id)
+            const index = this.contacts.findIndex((contact)=> contact.id === id)
+            if(index !== -1){
+                this.activeContact = index
+            }
         }
     },
     mounted(){

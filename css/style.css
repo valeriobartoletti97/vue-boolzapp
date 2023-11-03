@@ -12,6 +12,7 @@
     --color-notification: #8edafc;
     --color-msg-bar: #f3eeea;
     --background: linear-gradient(180deg, #009688 24.99%, #DCDBD3 25%);
+
 }
 *{
     margin:0;
@@ -91,6 +92,9 @@ i{
 .msg{
     width: 40%;
     border-radius: 12px;
+}
+.active{
+    background-color:var(--color-contact-active)
 }
 /* utility */
 
