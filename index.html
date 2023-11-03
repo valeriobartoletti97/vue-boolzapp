@@ -71,8 +71,13 @@
                         <div class="headers">
                             <div class="col-12 p-2 px-3 d-flex justify-content-between">
                                 <div>
-                                    <img :src="contacts[activeContact].avatar" :alt="contacts[activeContact].name">
-                                    <span class="my-name">{{contacts[activeContact].name}}</span>
+                                    <div class="d-inline-block">
+                                        <img :src="contacts[activeContact].avatar" :alt="contacts[activeContact].name">
+                                    </div>
+                                    <div class="d-inline-block align-bottom">
+                                        <span class="contact-name">{{contacts[activeContact].name}}</span><br>
+                                        <span class="last-access">Ultimo accesso oggi alle 12:00</span>
+                                    </div>
                                 </div>
                                 <div class="icons-group d-flex flex-nowrap align-items-center">
                                     <i class="fa-solid fa-circle-notch px-2"></i>
@@ -84,11 +89,8 @@
                         <!-- main chat -->
                         <div id="chat-wrapper" class="col-12 flex-grow-1 overflow-y-auto">
                             <div id="main-chat" class="pt-5 d-flex flex-column">
-                                <div class="msg sent p-3">
-                                    Ciao come stai?
-                                </div>
-                                <div class="msg received p-3">
-                                    Ciao come stai?
+                                <div class="msg p-3" v-for="(msg,i) in contacts[activeContact].messages" :class="msg.status">
+                                    {{msg.message}}
                                 </div>
                             </div>
                         </div>

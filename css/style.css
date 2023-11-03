@@ -79,6 +79,10 @@ i{
     color: var(--color-text-grey);
     font-size: 0.8em;
 }
+.last-access{
+    font-size: 0.8em;
+    color:var(--color-dark-grey)
+}
 .contact-name{
     font-size: 1.3em;
 }
