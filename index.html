@@ -16,7 +16,7 @@
         <div class="container py-4 h-100">
             <div class="row h-100 flex-nowrap g-0">
                 <!-- left container -->
-                <div id="left-contacts" class="col-12 col-md-4 br-visible">
+                <div id="left-contacts" class="col-12 col-md-4 br-visible d-md-block" :class="{'d-none' : showChat}">
                     <div class="row h-100 flex-column flex-nowrap g-0">
                         <div class="headers">
                             <div class="col-12 p-2 px-3 d-flex justify-content-between">
@@ -47,7 +47,7 @@
                                 <span class="input-group-text" id="addon-wrapping">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </span>
-                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" v-model="filterInContact">
+                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" v-model.trim="filterInContact">
                             </div>
                         </div>
                         <div class="col-12 flex-grow-1 overflow-y-auto h0">
@@ -66,7 +66,7 @@
                     </div>
                 </div>
                 <!-- right container -->
-                <div class="col-12 col-md-8">
+                <div class="col-12 col-md-8 d-md-block" :class="{'d-none' : !showChat}">
                     <div class="row h-100 flex-column flex-nowrap g-0">
                         <div class="headers">
                             <div class="col-12 p-2 px-3 d-flex justify-content-between">
@@ -80,6 +80,7 @@
                                     </div>
                                 </div>
                                 <div class="icons-group d-flex flex-nowrap align-items-center">
+                                    <i class="fa-solid fa-eye-slash" @click="showChat = !showChat"></i>
                                     <i class="fa-solid fa-circle-notch px-2"></i>
                                     <i class="fa-solid fa-message px-2"></i>
                                     <i class="fa-solid fa-ellipsis-vertical px-2"></i>
@@ -89,7 +90,7 @@
                         <!-- main chat -->
                         <div id="chat-wrapper" class="col-12 flex-grow-1 h0 overflow-y-auto">
                             <div id="main-chat" class="pt-5 d-flex flex-column">
-                                <div class="msg p-3" v-for="(msg,i) in contacts[activeContact].messages" :class="msg.status">
+                                <div class="msg p-3" v-for="(msg,i) in contacts[activeContact].messages" :class="msg.status" ref="messages">
                                     {{msg.message}}
                                 </div>
                             </div>
@@ -106,6 +107,7 @@
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.3/build/global/luxon.min.js"></script>
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
     <script src="js/script.js" type="module"></script>
 </body>

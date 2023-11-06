@@ -1,3 +1,5 @@
+const dt = luxon.DateTime;
+
 import { contactList } from "./data.js";
 const {createApp} = Vue;
 
@@ -8,6 +10,7 @@ createApp({
            activeContact: 0,
            message:'',
            filterInContact: '',
+           showChat: false
         }
     },
     methods:{
@@ -16,21 +19,25 @@ createApp({
             if(index !== -1){
                 this.activeContact = index
             }
+            this.showChat = true;
         },
         sendMessage(){
             if(this.message === ''){
                 this.message = ''
             } else {
                 const newMessage = {
-                date: new Date,
+                date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
                 message: this.message,
                 status: 'sent'
             };
             this.contacts[this.activeContact].messages.push(newMessage);
+            this.$nextTick(() => {
+
+            })
             this.message = ''
             setTimeout(()=>{
                 const newAnswer = {
-                    date: new Date,
+                    date: dt.now().setLocale('it').toLocaleString(dt.DATETIME_SHORT_WITH_SECONDS),
                     message: 'Ok',
                     status: 'received'
                 };
