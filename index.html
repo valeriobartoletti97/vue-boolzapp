@@ -47,11 +47,11 @@
                                 <span class="input-group-text" id="addon-wrapping">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </span>
-                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" >
+                                <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" v-model="filterInContact">
                             </div>
                         </div>
                         <div class="col-12 flex-grow-1 overflow-y-auto h0">
-                            <div :class="{'active' : i === activeContact}" v-for="(contact,i) in contacts" :key="contact.id" @click="selectContact(contact.id)">
+                            <div class="contact-hover" :class="{'active' : i === activeContact}" v-for="(contact,i) in filteredContacts" :key="contact.id" @click="selectContact(contact.id)">
                                 <div class="d-flex flex-nowrap py-2 p-2 px-3">
                                     <div>
                                         <img class="" :src="contact.avatar" :alt="contact.name">

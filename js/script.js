@@ -6,7 +6,8 @@ createApp({
         return{
            contacts: contactList,
            activeContact: 0,
-           message:''
+           message:'',
+           filterInContact: '',
         }
     },
     methods:{
@@ -36,6 +37,11 @@ createApp({
                 this.contacts[this.activeContact].messages.push(newAnswer);
             }, "1000");
             }
+        },
+    },
+    computed:{
+        filteredContacts(){
+            return this.contacts.filter((contact)=> contact.name.toLowerCase().includes(this.filterInContact.toLowerCase()))
         }
     },
     mounted(){

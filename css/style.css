@@ -98,7 +98,13 @@ i{
     border-radius: 12px;
 }
 .active{
-    background-color:var(--color-contact-active)
+    background-color:var(--color-light-icons)
+}
+i , .s-underline , .contact-hover:hover{
+    cursor:pointer
+}
+.contact-hover:hover{
+    background-color: var(--color-contact-active)
 }
 /* utility */
 
