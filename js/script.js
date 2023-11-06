@@ -10,7 +10,8 @@ createApp({
            activeContact: 0,
            message:'',
            filterInContact: '',
-           showChat: false
+           showChat: false,
+           indexMsg : 0
         }
     },
     methods:{
@@ -42,6 +43,22 @@ createApp({
             }, "1000");
             }
         },
+        openDropdown(i){
+            if(this.indexMsg !== i){
+                this.indexMsg = i
+            } else {
+                this.indexMsg = null
+            }
+        },
+        deleteMsg(i){
+            if(this.contacts[this.activeContact].messages.length === 0){
+                console.log('ciao')
+            } else{ 
+                this.contacts[this.activeContact].messages.splice(i,1)
+                this.indexMsg = null
+                console.log('ciao')
+            }
+        }
     },
     computed:{
         filteredContacts(){

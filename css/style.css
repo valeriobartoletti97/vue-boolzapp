@@ -108,6 +108,9 @@ i , .s-underline , .contact-hover:hover{
     top:0;
     font-size: 0.7em;
 }
+.fa-angle-down:hover{
+    cursor:pointer;
+}
 /* utility */
 
 .h0{

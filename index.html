@@ -58,9 +58,9 @@
                                     </div>
                                     <div class="d-inline align-top ps-4 pt-1">
                                         <span class="d-inline-block contact-name">{{contact.name}}</span><br>
-                                        <span class="last-message">{{contact.messages[contact.messages.length -1].message}}</span>
+                                        <span class="last-message" v-if="contact.messages.length > 0">{{contact.messages[contact.messages.length -1].message}}</span>
                                     </div>
-                                    <div class="msg-date position-absolute">{{contact.messages[contact.messages.length -1].date}}</div>
+                                    <div class="msg-date position-absolute" v-if="contact.messages.length > 0">{{contact.messages[contact.messages.length -1].date}}</div>
                                 </div>
                             </div> 
                         </div>
@@ -89,10 +89,16 @@
                             </div>
                         </div>
                         <!-- main chat -->
-                        <div id="chat-wrapper" class="col-12 flex-grow-1 h0 overflow-y-auto">
+                        <div id="chat-wrapper" class="col-12 flex-grow-1 h0 overflow-y-auto overflow-hidden">
                             <div id="main-chat" class="pt-5 d-flex flex-column">
-                                <div class="msg p-3" v-for="(msg,i) in contacts[activeContact].messages" :class="msg.status" ref="messages">
-                                    {{msg.message}}
+                                <div class="msg p-3 d-flex justify-content-between flex-nowrap" v-for="(msg,i) in contacts[activeContact].messages" :class="msg.status" ref="messages">
+                                    <span>{{msg.message}}</span>
+                                    <div class="dropdown" :class="{'d-none' : contacts[activeContact].messages.length === 0}">
+                                        <i class="fa-solid fa-angle-down" @click= "openDropdown(i) "></i>
+                                        <ul class="dropdown-menu dropdown-menu-lg-start" :class="{'show' : indexMsg === i}">
+                                          <li><a class="dropdown-item" href="#" @click.prevent="deleteMsg(i)">Delete</a></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
