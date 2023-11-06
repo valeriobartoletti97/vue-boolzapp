@@ -11,7 +11,7 @@ createApp({
            message:'',
            filterInContact: '',
            showChat: false,
-           indexMsg : 0
+           indexMsg : null
         }
     },
     methods:{

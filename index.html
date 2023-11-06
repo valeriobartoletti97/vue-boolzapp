@@ -95,7 +95,7 @@
                                     <span>{{msg.message}}</span>
                                     <div class="dropdown" :class="{'d-none' : contacts[activeContact].messages.length === 0}">
                                         <i class="fa-solid fa-angle-down" @click= "openDropdown(i) "></i>
-                                        <ul class="dropdown-menu dropdown-menu-lg-start" :class="{'show' : indexMsg === i}">
+                                        <ul class="dropdown-menu" :class="{'show' : indexMsg === i}">
                                           <li><a class="dropdown-item" href="#" @click.prevent="deleteMsg(i)">Delete</a></li>
                                         </ul>
                                     </div>
