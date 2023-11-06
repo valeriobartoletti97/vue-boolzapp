@@ -103,6 +103,11 @@ i{
 i , .s-underline , .contact-hover:hover{
     cursor:pointer
 }
+.msg-date{
+    right:0;
+    top:0;
+    font-size: 0.7em;
+}
 /* utility */
 
 .h0{

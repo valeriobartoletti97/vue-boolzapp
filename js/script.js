@@ -31,9 +31,6 @@ createApp({
                 status: 'sent'
             };
             this.contacts[this.activeContact].messages.push(newMessage);
-            this.$nextTick(() => {
-
-            })
             this.message = ''
             setTimeout(()=>{
                 const newAnswer = {

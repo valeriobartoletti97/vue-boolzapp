@@ -51,15 +51,16 @@
                             </div>
                         </div>
                         <div class="col-12 flex-grow-1 overflow-y-auto h0">
-                            <div class="contact-hover" :class="{'active' : i === activeContact}" v-for="(contact,i) in filteredContacts" :key="contact.id" @click="selectContact(contact.id)">
+                            <div class="contact-hover position-relative" :class="{'active' : i === activeContact}" v-for="(contact,i) in filteredContacts" :key="contact.id" @click="selectContact(contact.id)">
                                 <div class="d-flex flex-nowrap py-2 p-2 px-3">
                                     <div>
                                         <img class="" :src="contact.avatar" :alt="contact.name">
                                     </div>
-                                    <div class="d-inline align-top ps-4">
+                                    <div class="d-inline align-top ps-4 pt-1">
                                         <span class="d-inline-block contact-name">{{contact.name}}</span><br>
                                         <span class="last-message">{{contact.messages[contact.messages.length -1].message}}</span>
                                     </div>
+                                    <div class="msg-date position-absolute">{{contact.messages[contact.messages.length -1].date}}</div>
                                 </div>
                             </div> 
                         </div>
@@ -76,11 +77,11 @@
                                     </div>
                                     <div class="d-inline-block align-bottom px-2">
                                         <span class="contact-name">{{contacts[activeContact].name}}</span><br>
-                                        <span class="last-access">Ultimo accesso oggi alle 12:00</span>
+                                        <span class="last-access">Ultimo accesso {{contacts[activeContact].messages[contacts[activeContact].messages.length - 1].date}}</span>
                                     </div>
                                 </div>
                                 <div class="icons-group d-flex flex-nowrap align-items-center">
-                                    <i class="fa-solid fa-eye-slash" @click="showChat = !showChat"></i>
+                                    <i class="fa-solid fa-eye-slash d-md-none" @click="showChat = !showChat"></i>
                                     <i class="fa-solid fa-circle-notch px-2"></i>
                                     <i class="fa-solid fa-message px-2"></i>
                                     <i class="fa-solid fa-ellipsis-vertical px-2"></i>
