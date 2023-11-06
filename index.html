@@ -81,7 +81,8 @@
                                     </div>
                                 </div>
                                 <div class="icons-group d-flex flex-nowrap align-items-center">
-                                    <i class="fa-solid fa-eye-slash d-md-none" @click="showChat = !showChat"></i>
+                                    <i class="fa-solid fa-eye-slash d-md-none px-2" @click="showChat = !showChat"></i>
+                                    <i class="fa-solid fa-font px-2" @click="textBigger = !textBigger"></i>
                                     <i class="fa-solid fa-circle-notch px-2"></i>
                                     <i class="fa-solid fa-message px-2"></i>
                                     <i class="fa-solid fa-ellipsis-vertical px-2"></i>
@@ -90,7 +91,7 @@
                         </div>
                         <!-- main chat -->
                         <div id="chat-wrapper" class="col-12 flex-grow-1 h0 overflow-y-auto overflow-hidden">
-                            <div id="main-chat" class="pt-5 d-flex flex-column">
+                            <div id="main-chat" class="pt-5 d-flex flex-column" :class="{'bigger-text' : textBigger}">
                                 <div class="msg p-3 d-flex justify-content-between flex-nowrap" v-for="(msg,i) in contacts[activeContact].messages" :class="msg.status" ref="messages">
                                     <span>{{msg.message}}</span>
                                     <div class="dropdown" :class="{'d-none' : contacts[activeContact].messages.length === 0}">

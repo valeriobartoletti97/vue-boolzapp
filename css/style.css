@@ -127,3 +127,6 @@ i , .s-underline , .contact-hover:hover{
 .br-visible{
     border-right: 1px solid var(--color-light-icons);
 }
+.bigger-text{
+    font-size: 1.2em
+}
